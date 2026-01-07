@@ -1,0 +1,13 @@
+[Unit]
+Description=NVIDIA Driver Rescue Service
+Documentation=https://github.com/spencer8192/silverblue-nvidia-rescue
+After=akmods.service
+Before=display-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/nvidia-rescue.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
